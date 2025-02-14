@@ -55,12 +55,15 @@ header.appendChild(h4)
 
 // const red = document.createAttribute('style')
 // red.value = "color:red"
-const turnRed = () => {
+function turnRed() {
     this.style = 'color: red'
+    this.textContent += '... now in red!'
+    console.log('clicked')
 }
 
 // ! function running regardless of the event listener
-h4.addEventListener("click", turnRed())
+h4.addEventListener("click", turnRed)
+
 
 // * Synopsis
 synopsis.style = 'text-align: center'
