@@ -6,9 +6,9 @@
     * - Create at least one element using createElement. (Completed)
     * - Use appendChild and/or prepend to add new elements to the DOM. (Completed)
     * - Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content. (Completed) 
-    TODO - Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
-    TODO - Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
-    TODO - Modify at least one attribute of an element in response to user interaction.
+    * - Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
+    * - Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
+    * - Modify at least one attribute of an element in response to user interaction.
     TODO - Register at least two different event listeners and create the associated event handler functions.
     * - Use at least two Browser Object Model (BOM) properties or methods. (Completed)
     TODO - Include at least one form and/or input with HTML attribute validation.
@@ -58,10 +58,8 @@ header.appendChild(h4)
 function turnRed() {
     this.style = 'color: red'
     this.textContent += '... now in red!'
-    console.log('clicked')
 }
 
-// ! function running regardless of the event listener
 h4.addEventListener("click", turnRed)
 
 
@@ -121,12 +119,22 @@ list.removeChild(list.firstChild)
 const img = document.createElement('img')
 img.src = 'https://th.bing.com/th/id/OIP.4teWOgtnfYNSbtHmMtRvuwHaFj?rs=1&pid=ImgDetMain'
 
+function changeImg() {
+    if (this.src === 'https://th.bing.com/th/id/OIP.4teWOgtnfYNSbtHmMtRvuwHaFj?rs=1&pid=ImgDetMain') {
+        this.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/1200px-DOM-model.svg.png'
+    } else {
+        this.src = 'https://th.bing.com/th/id/OIP.4teWOgtnfYNSbtHmMtRvuwHaFj?rs=1&pid=ImgDetMain'
+    }
+}
+
+img.addEventListener('click', changeImg)
+
 mainInfo.prepend(img)
 
 // * Conclusive Info
 // let conclusionTitle = window.prompt('Please input a title for the conclusion card')
-let conclusionContent = 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.'
-conclusion.appendChild(createCard(conclusionTitle, conclusionContent))
+// let conclusionContent = 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.'
+// conclusion.appendChild(createCard(conclusionTitle, conclusionContent))
 
 
 
