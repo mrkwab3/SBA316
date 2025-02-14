@@ -14,15 +14,13 @@ header.appendChild(h4)
 
 // * Synopsis
 
+
 // * Main Info
 
 // * Conclusive Info
 
 
-const p = document.createElement('p')
-p.textContent = 'lorem ipsum dolor'
 
-synopsis.appendChild(p)
 
 
 
